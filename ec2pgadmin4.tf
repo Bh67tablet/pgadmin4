@@ -4,8 +4,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "ec2" {
-  ami                    = "ami-0355d85befe722c2b"
-  iam_instance_profile   = "ec2-ecr-admin_profile" 
+  ami                    = "ami-0355d85befe722c2b" 
   instance_type          = "t2.micro"
   subnet_id              = "subnet-071f9951d322eedc3"
   associate_public_ip_address = "true"
