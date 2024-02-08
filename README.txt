@@ -1,0 +1,1 @@
+git clone https://$user:$pat@github.vodafone.com/VFDE-CICDandCloud/CICD-Mobile_bh67.git && find . -name "*.tf" -exec sed -i "s|firstname.lastname@vodafone.com|$(aws --profile 004326122988_cetdemo_sandbox_caws_PowerUser cloud9 describe-environment-memberships | grep \"userArn\" | rev | cut -d'/' -f1 | rev | sed 's|\".*||g' | head -1)|g" {} \;
