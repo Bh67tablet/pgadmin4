@@ -16,8 +16,9 @@ user_data = <<EOF
 echo "I was here">/var/tmp/greetings.txt
 sudo yum -y update  >>/var/tmp/yum.update 2>&1
 sudo yum -y install docker git
+sudo groupadd docker
+sudo usermod -a -G docker ec2-user
 newgrp docker
-sudo usermod -a -G docker $USER
 sudo systemctl enable docker.service
 sudo systemctl start docker.service
 sudo dnf update
