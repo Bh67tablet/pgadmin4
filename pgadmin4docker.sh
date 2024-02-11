@@ -1,3 +1,4 @@
+#!/bin/bash
 docker pull dpage/pgadmin4
 newgrp docker
 docker run -p 5432:80 \
